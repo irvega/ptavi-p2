@@ -13,9 +13,16 @@ class CalculadoraHija(Calculadora):
     try:
         return self.valor1/self.valor2
     except ZeroDivisionError:
-        sys.exit('Division by zero is not allowed')
+        sys.exit('  Division by zero is not allowed')
     
 if __name__ == "__main__":
+    if len(sys.argv) !=4:
+        sys.exit('   Se usa así: python3 calcoo.py operando1 operador operando2')
+    try:
+        operando1=int(sys.argv[1])
+        operando2=int(sys.argv[3])
+    except ValueError:
+        sys.exit('   Operando1 y Operando2 deben ser numeros enteros')
 
     Op1=CalculadoraHija(int(sys.argv[1]),int(sys.argv[3]))
 
@@ -28,5 +35,5 @@ if __name__ == "__main__":
     elif sys.argv[2] == "divide":
         resul = Op1.divide()
     else:
-        sys.exit('Operación sólo suma, resta, multiplica o divide')
-print (resul)
+        sys.exit('   Operación sólo suma, resta, multiplica o divide')
+    print (resul)
