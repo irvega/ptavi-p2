@@ -18,6 +18,12 @@ class Calculadora():
     return self.valor1-self.valor2
     
 if __name__ == "__main__":
-    Op1=Calculadora(2,7)
-    resul=Op1.suma()
+    Op1=Calculadora(int(sys.argv[1]),int(sys.argv[3]))
+
+    if sys.argv[2] == "suma":
+        resul = Op1.suma()
+    elif sys.argv[2] == "resta":
+        resul = Op1.resta()
+    else:
+        sys.exit('Operación sólo suma o resta')
 print (resul)
