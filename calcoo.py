@@ -19,6 +19,8 @@ class Calculadora():
     
 if __name__ == "__main__":
     Op1=Calculadora(int(sys.argv[1]),int(sys.argv[3]))
+    if len(sys.argv) !=4:
+        sys.exit('Se usa así: python3 calcoo.py operando1 operador operando2')
 
     if sys.argv[2] == "suma":
         resul = Op1.suma()
