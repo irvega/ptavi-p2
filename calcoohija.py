@@ -4,7 +4,7 @@
 import sys
 from calcoo import Calculadora
 
-class CalculadoraHija(Calculadora):
+class CalculadoraHija(Calculadora):  
 
   def multiplica(self):
     return self.valor1*self.valor2
@@ -16,8 +16,8 @@ class CalculadoraHija(Calculadora):
         sys.exit('Division by zero is not allowed')
     
 if __name__ == "__main__":
-    if len(sys.argv) !=4:
-        sys.exit('Se usa así: python3 calcoo.py operando1 operador operando2')
+#    if len(sys.argv) !=4:
+#        sys.exit('Se usa así: python3 calcoo.py operando1 operador operando2')
 
     Op1=CalculadoraHija(int(sys.argv[1]),int(sys.argv[3]))
 
@@ -30,5 +30,5 @@ if __name__ == "__main__":
     elif sys.argv[2] == "divide":
         resul = Op1.divide()
     else:
-        sys.exit('Operación sólo suma o resta')
+        sys.exit('Operación sólo suma, resta, multiplica o divide')
 print (resul)
