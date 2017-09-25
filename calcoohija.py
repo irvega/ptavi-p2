@@ -22,7 +22,10 @@ class CalculadoraHija(Calculadora):
     return self.valor1*self.valor2
    
   def divide(self):
-    return self.valor1/self.valor2
+    try:
+        return self.valor1/self.valor2
+    except ZeroDivisionError:
+        sys.exit('Division by zero is not allowed')
     
 if __name__ == "__main__":
     if len(sys.argv) !=4:
