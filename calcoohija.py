@@ -16,8 +16,6 @@ class CalculadoraHija(Calculadora):
         sys.exit('Division by zero is not allowed')
     
 if __name__ == "__main__":
-#    if len(sys.argv) !=4:
-#        sys.exit('Se usa así: python3 calcoo.py operando1 operador operando2')
 
     Op1=CalculadoraHija(int(sys.argv[1]),int(sys.argv[3]))
 
