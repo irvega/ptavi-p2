@@ -4,9 +4,13 @@
 import sys
 import csv
 from calcoohija import CalculadoraHija
+import os.path as path
 
 if len(sys.argv) != 2:
     sys.exit("  Use: python3 calcplusplus.py <fich>")
+
+if not path.exists(sys.argv[1]):
+    sys.exit("  Name of fich doesn't exist")
 
 with open(sys.argv[1], 'r') as fich:
 
