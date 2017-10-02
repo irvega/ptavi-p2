@@ -2,29 +2,32 @@
 # -*- coding: utf-8 -*-
 
 import sys
+
+
 from calcoo import Calculadora
 
-class CalculadoraHija(Calculadora):  
 
-  def multiplica(self):
-    return self.valor1*self.valor2
-   
-  def divide(self):
-    try:
-        return self.valor1/self.valor2
-    except ZeroDivisionError:
-        sys.exit('  Division by zero is not allowed')
-    
+class CalculadoraHija(Calculadora):
+
+    def multiplica(self):
+        return self.valor1*self.valor2
+
+    def divide(self):
+        try:
+            return self.valor1/self.valor2
+        except ZeroDivisionError:
+            sys.exit('  Division by zero is not allowed')
+
 if __name__ == "__main__":
-    if len(sys.argv) !=4:
-        sys.exit('   Se usa así: python3 calcoo.py operando1 operador operando2')
+    if len(sys.argv) != 4:
+        sys.exit('   Usar así: python3 calcoo.py operando1 operador operando2')
     try:
-        operando1=int(sys.argv[1])
-        operando2=int(sys.argv[3])
+        operando1 = int(sys.argv[1])
+        operando2 = int(sys.argv[3])
     except ValueError:
         sys.exit('   Operando1 y Operando2 deben ser numeros enteros')
 
-    Op1=CalculadoraHija(int(sys.argv[1]),int(sys.argv[3]))
+    Op1 = CalculadoraHija(int(sys.argv[1]), int(sys.argv[3]))
 
     if sys.argv[2] == "suma":
         resul = Op1.suma()
@@ -36,4 +39,4 @@ if __name__ == "__main__":
         resul = Op1.divide()
     else:
         sys.exit('   Operación sólo suma, resta, multiplica o divide')
-    print (resul)
+    print(resul)
